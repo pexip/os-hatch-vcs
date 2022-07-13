@@ -1,0 +1,8 @@
+---
+Bug-Database: https://github.com/ofek/hatch-vcs/issues
+Bug-Submit: https://github.com/ofek/hatch-vcs/issues/new
+Registry:
+  - Name: PyPI
+    Entry: hatch-vcs
+Repository: https://github.com/ofek/hatch-vcs.git
+Repository-Browse: https://github.com/ofek/hatch-vcs

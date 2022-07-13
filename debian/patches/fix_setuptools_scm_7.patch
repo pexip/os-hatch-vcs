@@ -1,0 +1,15 @@
+Description: fix failing test with setuptools_scm >= 7
+Author: Ben Beasley
+Forwarded: https://github.com/ofek/hatch-vcs/issues/8
+
+--- hatch-vcs.orig/tests/test_build.py
++++ hatch-vcs/tests/test_build.py
+@@ -75,7 +75,7 @@
+     assert os.path.isfile(version_file)
+ 
+     lines = read_file(version_file).splitlines()
+-    assert lines[3] == "version = '1.2.3'"
++    assert lines[3].endswith("version = '1.2.3'")
+ 
+ 
+ @pytest.mark.skipif(sys.version_info[0] == 2, reason='Depends on fix in 6.4.0 which is Python 3-only')

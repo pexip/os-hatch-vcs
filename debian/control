@@ -1,0 +1,28 @@
+Source: hatch-vcs
+Section: python
+Priority: optional
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders: Stefano Rivera <stefanor@debian.org>
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-python,
+ git,
+ pybuild-plugin-pyproject,
+ python3-all,
+ python3-hatchling (>=0.21),
+ python3-pytest,
+ python3-setuptools-scm
+Vcs-Git: https://salsa.debian.org/python-team/packages/hatch-vcs.git
+Vcs-Browser: https://salsa.debian.org/python-team/packages/hatch-vcs
+Homepage: https://github.com/ofek/hatch-vcs
+Standards-Version: 4.6.1
+Rules-Requires-Root: no
+
+Package: python3-hatch-vcs
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Description: Hatch plugin for versioning from VCS
+ This provides a plugin for Hatch that uses your preferred version control
+ system (like Git) to determine project versions.
+ .
+ It may be required to build a Python module from source.

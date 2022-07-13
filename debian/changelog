@@ -1,0 +1,27 @@
+hatch-vcs (0.2.0-4) unstable; urgency=medium
+
+  * Point d/watch to real upstream.
+
+ -- Julien Puydt <jpuydt@debian.org>  Wed, 13 Jul 2022 20:40:50 +0200
+
+hatch-vcs (0.2.0-3) unstable; urgency=medium
+
+  * Team upload.
+  * Add patch to fix compatibility with setuptools_scm >= 7.
+  * Bump standards-version to 4.6.1.
+
+ -- Julien Puydt <jpuydt@debian.org>  Mon, 04 Jul 2022 10:11:19 +0200
+
+hatch-vcs (0.2.0-2) unstable; urgency=medium
+
+  * Upload to unstable.
+  * Make the primary maintainer the Debian Python Team.
+  * Add upstream metadata.
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 15 May 2022 16:51:23 -0400
+
+hatch-vcs (0.2.0-1) experimental; urgency=low
+
+  * Initial release. (Closes: #1009986)
+
+ -- Stefano Rivera <stefanor@debian.org>  Thu, 21 Apr 2022 15:14:39 -0400

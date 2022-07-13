@@ -1,0 +1,2 @@
+unset-pretend-scm
+fix_setuptools_scm_7.patch

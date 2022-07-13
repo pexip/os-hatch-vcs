@@ -1,0 +1,6 @@
+Tests: unittests
+Depends:
+ git,
+ python3-all,
+ python3-hatch-vcs,
+ python3-pytest
