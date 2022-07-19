@@ -1,8 +1,9 @@
 Source: hatch-vcs
 Section: python
 Priority: optional
-Maintainer: Debian Python Team <team+python@tracker.debian.org>
-Uploaders: Stefano Rivera <stefanor@debian.org>
+Maintainer: Pexip AS <packaging@pexip.com>
+XSBC-Pexip-Original-Maintainer: Debian Python Team <team+python@tracker.debian.org>
+XSBC-Pexip-Original-Uploaders: Stefano Rivera <stefanor@debian.org>
 Build-Depends:
  debhelper-compat (= 13),
  dh-python,
@@ -17,6 +18,7 @@ Vcs-Browser: https://salsa.debian.org/python-team/packages/hatch-vcs
 Homepage: https://github.com/ofek/hatch-vcs
 Standards-Version: 4.6.1
 Rules-Requires-Root: no
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ bookworm
 
 Package: python3-hatch-vcs
 Architecture: all
