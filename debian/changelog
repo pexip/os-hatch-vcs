@@ -1,3 +1,9 @@
+hatch-vcs (0.2.0-4pexip2) pexip-bullseye; urgency=medium
+
+  * Bullseye rebuild for ARM64 inclusion
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Mon, 05 Sep 2022 10:31:55 +0100
+
 hatch-vcs (0.2.0-4pexip1) pexip-bullseye; urgency=medium
 
   * Prepare Pexip packaging
