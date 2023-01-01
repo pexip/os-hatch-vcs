@@ -8,7 +8,7 @@ class VCSBuildHook(BuildHookInterface):
     PLUGIN_NAME = 'vcs'
 
     def __init__(self, *args, **kwargs):
-        super(VCSBuildHook, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
         self.__config_version_file = None
         self.__config_template = None

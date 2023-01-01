@@ -1,3 +1,24 @@
+hatch-vcs (0.3.0-2) unstable; urgency=medium
+
+  * Patch: Support setuptools_scm 7.1 in tests. (Closes: #1027623)
+
+ -- Stefano Rivera <stefanor@debian.org>  Sun, 01 Jan 2023 16:34:27 -0400
+
+hatch-vcs (0.3.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump hatchling Build-Dep, following upstream.
+
+ -- Stefano Rivera <stefanor@debian.org>  Wed, 14 Dec 2022 20:10:39 -0400
+
+hatch-vcs (0.2.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Drop patches, superseded upstream.
+  * Support the nocheck build profile.
+
+ -- Stefano Rivera <stefanor@debian.org>  Fri, 09 Dec 2022 17:41:18 -0400
+
 hatch-vcs (0.2.0-4) unstable; urgency=medium
 
   * Point d/watch to real upstream.
