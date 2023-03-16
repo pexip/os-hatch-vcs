@@ -1,3 +1,9 @@
+hatch-vcs (0.3.0-2pexip1) pexip; urgency=medium
+
+  * New upstream version
+
+ -- Huw Jones <huw@pexip.com>  Thu, 16 Mar 2023 16:29:53 +0000
+
 hatch-vcs (0.3.0-2) unstable; urgency=medium
 
   * Patch: Support setuptools_scm 7.1 in tests. (Closes: #1027623)
