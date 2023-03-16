@@ -1,3 +1,2 @@
-unset-pretend-scm
-fix_setuptools_scm_7.patch
+setuptools_scm-7.1
 999_pexip_disable_test.patch
