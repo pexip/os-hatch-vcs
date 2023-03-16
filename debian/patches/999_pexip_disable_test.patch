@@ -1,7 +1,7 @@
 --- a/tests/test_build.py
 +++ b/tests/test_build.py
-@@ -78,6 +78,7 @@
-     assert lines[3].endswith("version = '1.2.3'")
+@@ -81,6 +81,7 @@
+     assert version_line.endswith(" = '1.2.3'")
  
  
 +@pytest.mark.skipif(True, reason='Fails in Pexos and we do not need this functionality')
