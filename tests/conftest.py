@@ -33,12 +33,16 @@ def temp_dir():
 
 
 @contextmanager
-def create_project(directory, metadata, setup_vcs=True):
-    project_dir = os.path.join(directory, 'my-app')
-    os.mkdir(project_dir)
+def create_project(directory, metadata, *, setup_vcs=True, nested=False):
+    root_dir = project_dir = os.path.join(directory, 'my-app')
+    os.mkdir(root_dir)
 
-    gitignore_file = os.path.join(project_dir, '.gitignore')
+    gitignore_file = os.path.join(root_dir, '.gitignore')
     write_file(gitignore_file, '/my_app/version.py')
+
+    if nested:
+        project_dir = os.path.join(root_dir, 'project')
+        os.mkdir(project_dir)
 
     project_file = os.path.join(project_dir, 'pyproject.toml')
     write_file(project_file, metadata)
@@ -55,12 +59,18 @@ def create_project(directory, metadata, setup_vcs=True):
     os.chdir(project_dir)
     try:
         if setup_vcs:
+            if nested:
+                os.chdir(root_dir)
+
             git('init')
             git('config', '--local', 'user.name', 'foo')
             git('config', '--local', 'user.email', 'foo@bar.baz')
             git('add', '.')
             git('commit', '-m', 'test')
             git('tag', '1.2.3')
+
+            if nested:
+                os.chdir(project_dir)
 
         yield project_dir
     finally:
@@ -128,5 +138,51 @@ source = "vcs"
 fallback-version = "7.8.9"
 """,
         setup_vcs=False,
+    ) as project:
+        yield project
+
+
+@pytest.fixture
+def new_project_root_elsewhere(temp_dir):
+    with create_project(
+        temp_dir,
+        """\
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "my-app"
+dynamic = ["version"]
+
+[tool.hatch.version]
+source = "vcs"
+raw-options = { root = ".." }
+""",
+        nested=True,
+    ) as project:
+        yield project
+
+
+@pytest.fixture
+def new_project_metadata(temp_dir):
+    with create_project(
+        temp_dir,
+        """\
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "my-app"
+dynamic = ["version", "urls"]
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.metadata.hooks.vcs.urls]
+Homepage = "https://www.google.com"
+foo = "https://github.com/bar/baz#{commit_hash}"
+""",
     ) as project:
         yield project
